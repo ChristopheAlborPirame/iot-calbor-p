@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: chrisap75-playground
-          image: chrisap75/iot-p3:v1
+          image: chrisap75/iot-p3:v2
           ports:
             - containerPort: 80
 ---
