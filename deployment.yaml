@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: chrisap75-playground
-          image: chrisap75/iot-p3:v1 
+          image: chrisap75/iot-p3:v2
           ports:
             - containerPort: 8888
 ---
@@ -31,3 +31,23 @@ spec:
     - protocol: TCP
       port: 8888
       targetPort: 8888
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: iot-p3-ingress
+  namespace: dev
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: iot-p3-playground-service
+            port:
+              number: 8888
+
+
+
