@@ -17,7 +17,7 @@ spec:
         - name: chrisap75-playground
           image: chrisap75/iot-p3:v2
           ports:
-            - containerPort: 8888
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -30,7 +30,7 @@ spec:
   ports:
     - protocol: TCP
       port: 8888
-      targetPort: 8888
+      targetPort: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
