@@ -32,15 +32,18 @@ spec:
       port: 8888
       targetPort: 80
 ---
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: iot-p3-ingress
   namespace: dev
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
+  ingressClassName: traefik
   rules:
-  - http:
+  - host: deployed.com
+    http:
       paths:
       - path: /
         pathType: Prefix
