@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: chrisap75-playground
-          image: chrisap75/calbor-p-p3:v2
+          image: chrisap75/calbor-p-p3:v1
           ports:
             - containerPort: 80
 ---
